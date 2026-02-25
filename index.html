@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Vulnerability Scanner</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-shield-alt"></i> Web Vulnerability Scanner</h1>
+            <p>Scan websites for vulnerabilities and decode various types of encoded text</p>
+        </header>
+
+        <main>
+            <section class="scanner-section">
+                <h2>Website Scanner</h2>
+                <div class="input-group">
+                    <input type="url" id="urlInput" placeholder="Enter website URL (e.g., https://example.com)" required>
+                    <button id="scanBtn" class="primary-btn">
+                        <i class="fas fa-search"></i> Scan
+                    </button>
+                </div>
+                <div id="scanResults" class="results-grid">
+                    <div class="result-card">
+                        <h3>XSS Vulnerability</h3>
+                        <div id="xssResult" class="result-content">Waiting for scan...</div>
+                    </div>
+                    <div class="result-card">
+                        <h3>SQL Injection</h3>
+                        <div id="sqlResult" class="result-content">Waiting for scan...</div>
+                    </div>
+                    <div class="result-card">
+                        <h3>Security Headers</h3>
+                        <div id="headersResult" class="result-content">Waiting for scan...</div>
+                    </div>
+                    <div class="result-card">
+                        <h3>SSL Certificate</h3>
+                        <div id="sslResult" class="result-content">Waiting for scan...</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="decoder-section">
+                <h2>Text Decoder</h2>
+                <div class="input-group">
+                    <textarea id="encodedText" placeholder="Enter encoded text to decode" rows="4"></textarea>
+                    <div class="decoder-controls">
+                        <select id="encodingType">
+                            <option value="base64">Base64</option>
+                            <option value="caesar">Caesar Cipher</option>
+                            <option value="hex">Hex</option>
+                            <option value="binary">Binary</option>
+                        </select>
+                        <div id="caesarShift" class="hidden">
+                            <label for="shiftValue">Shift Value:</label>
+                            <input type="number" id="shiftValue" min="-25" max="25" value="0">
+                        </div>
+                        <button id="decodeBtn" class="secondary-btn">
+                            <i class="fas fa-key"></i> Decode
+                        </button>
+                    </div>
+                </div>
+                <div class="result-card">
+                    <h3>Decoded Result</h3>
+                    <div id="decodedResult" class="result-content">Waiting for decode...</div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>For educational purposes only. Use responsibly and in accordance with applicable laws.</p>
+            <div class="footer-links">
+                <a href="readme.txt" target="_blank" class="footer-link">
+                    <i class="fas fa-book"></i> Documentation
+                </a>
+                <a href="https://github.com/ayushmittal897/SCANNER_DECODER" target="_blank" class="footer-link">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+            </div>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
