@@ -1,4 +1,5 @@
-eb Vulnerability Scanner
+Web Vulnerability Scanner & ENCODER
+
 ========================
 
 A modern web application for scanning websites for common vulnerabilities and decoding various types of encoded text.
